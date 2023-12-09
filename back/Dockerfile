@@ -2,7 +2,7 @@ FROM node:slim
 
 WORKDIR /app
 
-COPY src/dist .
+COPY src .
 RUN npm i
 
-CMD ["node", "server.js"]
+CMD ["npx", "ts-node", "server.ts"]

@@ -2,7 +2,7 @@ FROM node:slim
 
 WORKDIR /app
 
-COPY src/dist .
-RUN npm i
+COPY src .
+RUN npm i && npm run build
 
-CMD ["node", "server.js"]
+CMD ["node", ".output/server/index.mjs"]
